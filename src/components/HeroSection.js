@@ -1,6 +1,5 @@
-import Spline from "@splinetool/react-spline";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import HeroModel from "./HeroModel";
 
 export default function HeroSection({ className }) {
   return (
@@ -14,12 +13,8 @@ export default function HeroSection({ className }) {
           your every tech need in resonable price.
         </p>
       </div>
-      <div className="w-full h-[85vhvh] overflow-hidden radial-gradient-bg -translate-y-20">
-        <div className="h-[92vhvh] relative">
-          <Spline scene="https://prod.spline.design/o1svLy4HnlUQTJ3y/scene.splinecode" />
-          {/* <Image src ="/headphones.png" alt="headphones" width={400} height={400} className="absolute top-90 left-130"/> */}
-        </div>
-      </div>
+
+      <HeroModel />
     </div>
   );
 }

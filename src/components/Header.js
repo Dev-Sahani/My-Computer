@@ -47,9 +47,9 @@ const Header = () => {
       <div className="py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo Section */}
-          <div className="bg-white/20 backdrop-blur-md relative px-4 py-2 rounded-full">
+          <div className="bg-white/20 backdrop-blur-md relative px-3 py-1 rounded-full">
             <div className="w-8 h-8  rounded-full flex items-center justify-center">
-              <span className="font-bold text-lg text-blue-300">My</span>
+              <span className="font-bold text-blue-300">My</span>
 
               <BorderBeam
                 size={130}
@@ -61,7 +61,7 @@ const Header = () => {
 
           {/* Navigation Section - Desktop */}
           <div className="hidden md:block group bg-white/20 backdrop-blur-md">
-            <nav className="relative px-6 lg:px-8 py-3 rounded-full overflow-hidden">
+            <nav className="relative px-3 lg:px-4 py-2 rounded-full overflow-hidden">
               <ul className="flex items-center space-x-8 lg:space-x-10">
                 {navItems.map((item, index) => (
                   <li
@@ -86,7 +86,7 @@ const Header = () => {
 
           {/* Connect Button - Desktop */}
           <div className="hidden md:block relative bg-white/20 backdrop-blur-md group rounded-full">
-            <button className="px-6 py-3 font-medium">Connect</button>
+            <button className="px-3 py-2 font-medium">Connect</button>
 
             <BorderBeam
               size={300}
@@ -99,7 +99,7 @@ const Header = () => {
           <div className="md:hidden group">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-3 rounded-full text-lg"
+              className="p-3 rounded-full"
             >
               {isMobileMenuOpen ? <FiX size={30} /> : <FiMenu size={30} />}
             </button>

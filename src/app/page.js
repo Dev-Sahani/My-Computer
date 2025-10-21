@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
-import ProductSection from "@/components/ProductSection";
+import ProductSection from "@/components/ProductsSection";
+import ServicesSection from "@/components/ServicesSection";
 
 export default function Home() {
   return (
@@ -8,7 +9,9 @@ export default function Home() {
       <HeroSection className="root-padding" />
 
       {/* Product Section */}
-      <ProductSection className="root-padding" />
+      <ServicesSection className="root-padding" />
+
+      <ProductSection className="root-padding"/>
     </div>
   );
 }

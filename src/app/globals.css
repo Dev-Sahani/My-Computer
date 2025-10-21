@@ -105,8 +105,16 @@
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
+  --animate-gradient: gradient 8s linear infinite
 
-    /* shrink all text sizes by one step when < sm */
+;
+  @keyframes gradient {
+  to {
+    background-position: var(--bg-size, 300%) 0;
+    }
+  }}
+
+/* shrink all text sizes by one step when < sm */
 @media (--sm) {
   .text-xs { @apply text-[0.5rem]; } 
   .text-sm { @apply text-xs; }
@@ -130,8 +138,6 @@
   .text-3xl { @apply text-4xl; }
   .text-4xl { @apply text-5xl; }
   .text-5xl { @apply text-6xl; }
-}
-
 }
 
 .dark {
@@ -204,9 +210,10 @@ html {
 
 .hero-gradient {
   background: linear-gradient(
-    135deg,
-    #b6e4ff69 0%,
-    rgba(0, 255, 170, 0.17) 100%
+    180deg,
+    #62d0ff30 0%,
+    #62d0ff20 40%,
+    #1437ff05 100%
   );
 }
 
@@ -225,8 +232,7 @@ html {
   ); */
 }
 
-.radial-gradient-bg-2 {
-  @apply absolute inset-0 pointer-events-none scale-110 blur-2xl;
+.radial-gradient-bg-for-card {
   background: radial-gradient(
     circle at center,
     #b6fbff 0%,
