@@ -1,54 +1,66 @@
-const products = [
+const {
+    Laptop,
+    HardDrive,
+    Volume2,
+    Mouse,
+    Headphones,
+    Camera,
+    Printer,
+    Fingerprint,
+    ShieldCheck,
+    Box,
+  } = require("lucide-react");
+  
+  const products = [
     {
-        name: "Laptop & Computer",
-        description: "Discover powerful laptops and desktops tailored for work, gaming, and everyday use. Choose from top brands like Apple, Dell, HP, Lenovo, Asus, and Acer—performance and style guaranteed.",
-        image: "/laptop.png"
+      name: "Laptop & Computer",
+      description:
+        "Explore top laptops and desktops from Apple, Dell, HP, Lenovo, and more—built for work, gaming, and daily use.",
+      icon: <Laptop className="w-12 h-12 text-blue-300" />,
     },
     {
-        name: "Storage Devices",
-        description: "Never run out of space! From high-speed SSDs to reliable HDDs and portable pen drives, explore storage solutions from trusted brands like SanDisk, Samsung, and Lexar.",
-        image: "/pendrive.png"
+      name: "Computer Accessories",
+      description:
+        "Upgrade with premium keyboards, mice, headsets, webcams, and mics from Logitech and more.",
+      icon: <Mouse className="w-12 h-12 text-blue-300" />,
     },
     {
-        name: "Speakers and AI Speakers",
-        description: "Bring sound to life with crystal-clear speakers from JBL, Sony, Bose, and more. Upgrade your home with smart AI assistants like Alexa and Google Home for a modern audio experience.",
-        image: "/music-system.png"
+      name: "Storage Devices",
+      description:
+        "Find fast SSDs, reliable HDDs, and portable drives from brands like SanDisk, Samsung, and Lexar.",
+      icon: <HardDrive className="w-12 h-12 text-blue-300" />,
     },
     {
-        name: "Computer Accessories",
-        description: "Complete your setup with premium accessories—ergonomic keyboards, precision mice, noise-free headsets, HD webcams, and professional-grade microphones from Logitech, G-Enter, and others.",
-        image: "/hardware.png"
+      name: "Speakers & Earphones",
+      description:
+        "Shop wireless and wired options from Sony, Bose, JBL, and Noise for superior sound.",
+      icon: <Headphones className="w-12 h-12 text-blue-300" />,
     },
     {
-        name: "Headphones & Earphones",
-        description: "Experience music the way it’s meant to be heard. From bass-heavy headphones to sleek wireless earbuds, shop brands like Sony, Bose, JBL, and Noise for unmatched sound quality.",
-        image: "/headphones.png"
+      name: "CCTV Cameras",
+      description:
+        "Secure your space with advanced CCTV systems, DVRs, and NVRs from Secure-Eye and Axis.",
+      icon: <Camera className="w-12 h-12 text-blue-300" />,
     },
     {
-        name: "CCTV Cameras",
-        description: "Protect what matters most with advanced CCTV solutions. Choose from Secure-Eye, Axis, and more—plus DVRs and NVRs for complete surveillance and peace of mind.",
-        image: "/wall-mount-camera.png"
+      name: "Printers and IT Accessories",
+      description:
+        "Choose HP, Canon, Epson, and Brother printers plus essential IT accessories for smooth operations.",
+      icon: <Printer className="w-12 h-12 text-blue-300" />,
     },
     {
-        name: "Printers and IT Accessories",
-        description: "Print with precision and efficiency. Explore laser and inkjet printers from HP, Canon, Epson, and Brother, along with essential IT accessories to keep your office running smoothly.",
-        image: "/printer.png"
+      name: "Biometric Devices",
+      description:
+        "Enhance security with fingerprint, face, and iris scanners from Secure-Eye and Axis.",
+      icon: <Fingerprint className="w-12 h-12 text-blue-300" />,
     },
     {
-        name: "Biometric Devices",
-        description: "Step into the future of security with biometric devices—fingerprint, face, iris, and palm scanners. From Secure-Eye to Axis, we’ve got everything for smart attendance and authentication.",
-        image: "/finger-print.png"
-    },
-    {
-        name: "Anti-Virus & Security",
-        description: "Stay protected online with trusted antivirus solutions from Norton, Avira, and more. Safeguard your network with powerful firewalls and secure routers for total peace of mind.",
-        image: "/pendrive.png"
-    },
-    {
-        name: "Product 10",
-        description: "A versatile product designed to meet your everyday tech needs. Durable, stylish, and reliable—perfect for both home and professional use.",
-        image: "/laptop.png"
+      name: "Anti-Virus & Security",
+      description:
+        "Protect your devices with antivirus and firewall solutions from Norton, Avira, and more.",
+      icon: <ShieldCheck className="w-12 h-12 text-blue-300" />,
     }
-]
-
-export default products;
+  ];
+  
+  export default products;
+  

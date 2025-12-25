@@ -1,42 +1,30 @@
 "use client";
 import { cn } from "@/lib/utils";
+import products from "@/constants/products";
 
 export default function ProductSection({ className = "" }) {
-  const cardsRow1 = Array.from({ length: 8 }, (_, i) => `Card ${i + 1}`);
-  const cardsRow2 = Array.from({ length: 8 }, (_, i) => `Card ${i + 9}`);
+  const reversedProducts = [...products].reverse();
   return (
-    <section 
-      className={
-        cn(
-          "relative flex flex-col items-center justify-center overflow-hidden py-6 md:py-8 bg-white z-10",
-          className
-        )
-      }
+    <section
+      className={cn(
+        "relative flex flex-col items-center justify-center overflow-hidden py-6 md:py-12 bg-white z-10",
+        className
+      )}
     >
-      <h2 className="text-4xl font-bold my-8">Our Products</h2>
+      <h2 className="text-4xl font-bold mb-12">Our Products</h2>
 
-      <div className="space-y-16 w-full max-w-6xl">
+      <div className="space-y-4 w-full max-w-6xl">
         {/* Row 1 */}
         <div className="row row-1 flex space-x-6">
-          {cardsRow1.map((card, i) => (
-            <div
-              key={i}
-              className="w-48 h-32 flex items-center justify-center rounded-2xl shadow-md bg-white text-lg font-medium"
-            >
-              {card}
-            </div>
+          {products.map((product, i) => (
+            <ProductCard key={i} product={product} />
           ))}
         </div>
 
         {/* Row 2 */}
         <div className="row row-2 flex space-x-6">
-          {cardsRow2.map((card, i) => (
-            <div
-              key={i}
-              className="w-48 h-32 flex items-center justify-center rounded-2xl shadow-md bg-white text-lg font-medium"
-            >
-              {card}
-            </div>
+          {reversedProducts.map((product, i) => (
+            <ProductCard key={i} product={product} />
           ))}
         </div>
       </div>
@@ -44,18 +32,18 @@ export default function ProductSection({ className = "" }) {
       <style jsx>{`
         @keyframes row1-scroll {
           from {
-            transform: translateX(-80%);
+            transform: translateX(-100%);
           }
           to {
-            transform: translateX(30%);
+            transform: translateX(10%);
           }
         }
         @keyframes row2-scroll {
           from {
-            transform: translateX(20%);
+            transform: translateX(60%);
           }
           to {
-            transform: translateX(-30%);
+            transform: translateX(-40%);
           }
         }
 
@@ -78,13 +66,20 @@ export default function ProductSection({ className = "" }) {
         }
       `}</style>
     </section>
-  )
+  );
 }
 
-
-
-const ProductCard = (product)=>{
+function ProductCard({ product: { name, description, icon } = {}}) {
   return (
-    <div>Product</div>
+    <div className="flex items-start gap-4 bg-white shadow-md rounded-2xl p-5 hover:shadow-lg transition-all duration-300 w-[400px] min-w-[400px]">
+      {/* Icon */}
+      <div className="h-full flex-shrink-0 flex items-center justify-center">{icon}</div>
+
+      {/* Text Content */}
+      <div className="flex flex-col">
+        <h3 className="text-lg font-semibold text-gray-800 mb-1">{name}</h3>
+        <p className="text-gray-600 text-sm leading-snug">{description}</p>
+      </div>
+    </div>
   );
 }

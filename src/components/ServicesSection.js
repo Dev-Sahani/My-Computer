@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 
 export default function ServicesSection({ className }) {
   return (
-    <div className={cn("py-6 md:py-8 bg-white relative border-t z-10", className)}>
+    <section className={cn("py-6 md:py-8", className)}>
       <h1 className="w-full text-center mt-2 mb-8 font-bold text-5xl text-gray-900">
         Services We Offer
       </h1>
@@ -15,7 +15,7 @@ export default function ServicesSection({ className }) {
           services?.map((s, indx) => <Card key={indx} service={s} />)
         }
       </div>
-    </div>
+    </section>
   );
 }
 
