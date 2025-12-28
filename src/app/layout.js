@@ -1,17 +1,13 @@
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
+import { M_PLUS_Rounded_1c } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Cursor from "../components/Cursor";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const mPlusRounded1c = M_PLUS_Rounded_1c({
+  variable: "--font-m-plus-rounded-1c",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata = {
@@ -28,7 +24,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${mPlusRounded1c.variable} antialiased`}
+        style={{ fontFamily: '"M PLUS Rounded 1c", sans-serif' }}
       >
         <Header />
         {children}
