@@ -2,7 +2,7 @@ import "./globals.css";
 import { M_PLUS_Rounded_1c } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Cursor from "../components/Cursor";
+import CursorProviderWrapper from "../context/CursorProvider";
 
 const mPlusRounded1c = M_PLUS_Rounded_1c({
   variable: "--font-m-plus-rounded-1c",
@@ -27,11 +27,11 @@ export default function RootLayout({ children }) {
         className={`${mPlusRounded1c.variable} antialiased`}
         style={{ fontFamily: '"M PLUS Rounded 1c", sans-serif' }}
       >
-        <Header />
-        {children}
-        <Footer />
-
-        <Cursor />
+        <CursorProviderWrapper>
+          <Header />
+          {children}
+          <Footer />
+        </CursorProviderWrapper>
       </body>
     </html>
   );

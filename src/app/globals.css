@@ -179,13 +179,22 @@ html {
 }
 
 .inner-cursor,
-.outer-cursor {
+.outer-cursor,
+.custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
   pointer-events: none;
   transform: translate3d(0, 0, 0);
   will-change: transform;
+}
+
+.custom-cursor {
+  width: 200px;
+  height: 200px;
+  color: #fff;
+  z-index: 10001;
+  transition: transform 0.1s ease-out;
 }
 
 .inner-cursor {
