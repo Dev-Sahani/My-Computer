@@ -241,6 +241,46 @@ html {
   );
 }
 
+@keyframes slowDriftX {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 10% 5%;
+  }
+  50% {
+    background-position: -5% 10%;
+  }
+  75% {
+    background-position: -10% -5%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes slowDrift {
+  0% {
+    background-position: 25% 25%;
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 25% 50%;
+  }
+  100% {
+    background-position: 25% 25%;
+  }
+}
+
+.animated-bg {
+  animation: slowDrift 25s ease-in-out infinite !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

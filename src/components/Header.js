@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
 import { BorderBeam } from "./magicui/border-beam";
 import Link from "next/link";
@@ -9,6 +10,7 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const controlHeader = () => {
@@ -34,8 +36,8 @@ const Header = () => {
 
   const navItems = [
     { title: "Home", href: "/" },
-    { title: "About Us", href: "/about-us" },
-    { title: "Contact Us", href: "/contact-us" },
+    { title: "Services", href: "/services" },
+    { title: "About Us", href: "/about-us" }
   ];
 
   return (
@@ -44,11 +46,11 @@ const Header = () => {
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="py-4">
-        <div className="flex items-center justify-between gap-4">
+      <div className="py-8">
+        <div className="flex items-center justify-between gap-6">
           {/* Logo Section */}
-          <div className="bg-white/20 backdrop-blur-md relative px-3 py-1 rounded-full">
-            <div className="w-8 h-8  rounded-full flex items-center justify-center">
+          <div className="bg-white/20 backdrop-blur-md relative px-5 py-2 rounded-full">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center">
               <span className="font-bold text-blue-300">My</span>
 
               <BorderBeam
@@ -60,13 +62,13 @@ const Header = () => {
           </div>
 
           {/* Navigation Section - Desktop */}
-          <div className="hidden md:block group bg-white/20 backdrop-blur-md">
-            <nav className="relative px-3 lg:px-4 py-2 rounded-full overflow-hidden">
-              <ul className="flex items-center space-x-8 lg:space-x-10">
+          <div className="hidden rounded-full md:block group bg-white/20 backdrop-blur-md">
+            <nav className="relative px-4 lg:px-6 py-3 rounded-full overflow-hidden">
+              <ul className="flex items-center space-x-10 lg:space-x-12">
                 {navItems.map((item, index) => (
                   <li
                     key={index}
-                    className="lg:min-w-24 flex items-center justify-center"
+                    className="lg:min-w-28 flex items-center justify-center"
                   >
                     <Link href={item.href} className="font-medium cursor-none">
                       {item.title}
@@ -85,7 +87,7 @@ const Header = () => {
           </div>
 
           {/* Connect Button - Desktop */}
-          <div className="hidden md:block relative bg-white/20 backdrop-blur-md group rounded-full">
+          <div className="hidden rounded-full md:block relative bg-white/20 backdrop-blur-md group rounded-full">
             <button className="px-3 py-2 font-medium">Connect</button>
 
             <BorderBeam

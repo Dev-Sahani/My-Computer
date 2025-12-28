@@ -13,9 +13,10 @@ export default function Home() {
         <ServicesSection className="root-padding" />
 
         <ProductSection className="root-padding" />
+
+        <FeedbackSection className="root-padding" />
       </div>
 
-      <FeedbackSection className="root-padding" />
     </main>
   );
 }
