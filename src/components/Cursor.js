@@ -34,10 +34,6 @@ export default function Cursor() {
     };
   }, []);
 
-  if(cursorContent) {
-    console.log(cursorContent);
-  }
-
   return (
     <>
       <div 

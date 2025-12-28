@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
 import { BorderBeam } from "./magicui/border-beam";
 import Link from "next/link";
@@ -10,7 +9,6 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const controlHeader = () => {
@@ -49,7 +47,7 @@ const Header = () => {
       <div className="py-8">
         <div className="flex items-center justify-between gap-6">
           {/* Logo Section */}
-          <div className="px-4 lg:px-6 py-3 bg-white/20 backdrop-blur-md relative rounded-full">
+          <div className="px-4 lg:px-6 py-3 bg-transparent relative rounded-full">
             <div className="rounded-full flex items-center justify-center">
               <span className="font-bold text-blue-300">My</span>
 
@@ -62,7 +60,7 @@ const Header = () => {
           </div>
 
           {/* Navigation Section - Desktop */}
-          <div className="hidden rounded-full md:block group bg-white/20 backdrop-blur-md">
+          <div className="hidden rounded-full md:block group border-2 border-blue-400 ">
             <nav className="relative px-4 lg:px-6 py-3 rounded-full overflow-hidden">
               <ul className="flex items-center space-x-10 lg:space-x-12">
                 {navItems.map((item, index) => (
@@ -70,7 +68,7 @@ const Header = () => {
                     key={index}
                     className="lg:min-w-28 flex items-center justify-center"
                   >
-                    <Link href={item.href} className="cursor-none font-semibold">
+                    <Link href={item.href} className="cursor-none font-semibold text-blue-400">
                       {item.title}
                     </Link>
                   </li>
@@ -87,7 +85,7 @@ const Header = () => {
           </div>
 
           {/* Connect Button - Desktop */}
-          <div className="hidden rounded-full md:block relative bg-white/20 backdrop-blur-md group rounded-full">
+          <div className="hidden rounded-full md:block relative bg-transparent group rounded-full">
             <button className="px-4 lg:px-6 py-3 font-medium">Connect</button>
 
             <BorderBeam
