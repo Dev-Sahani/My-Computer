@@ -42,15 +42,15 @@ const Header = () => {
 
   return (
     <header
-      className={`root-padding fixed top-0 left-0 right-0 z-50 text-blue-300 transition-transform duration-300 ease-in-out ${
+      className={`root-padding fixed top-0 left-0 right-0 z-50 text-blue-400 transition-transform duration-300 ease-in-out ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <div className="py-8">
         <div className="flex items-center justify-between gap-6">
           {/* Logo Section */}
-          <div className="bg-white/20 backdrop-blur-md relative px-5 py-2 rounded-full">
-            <div className="w-12 h-12 rounded-full flex items-center justify-center">
+          <div className="px-4 lg:px-6 py-3 bg-white/20 backdrop-blur-md relative rounded-full">
+            <div className="rounded-full flex items-center justify-center">
               <span className="font-bold text-blue-300">My</span>
 
               <BorderBeam
@@ -70,7 +70,7 @@ const Header = () => {
                     key={index}
                     className="lg:min-w-28 flex items-center justify-center"
                   >
-                    <Link href={item.href} className="font-medium cursor-none">
+                    <Link href={item.href} className="cursor-none font-semibold">
                       {item.title}
                     </Link>
                   </li>
@@ -81,19 +81,19 @@ const Header = () => {
                 duration={8}
                 size={900}
                 borderWidth={2}
-                className="from-transparent via-blue-300  via-blue-400 to-transparent"
+                className="from-transparent via-blue-300 via-blue-500 to-transparent"
               />
             </nav>
           </div>
 
           {/* Connect Button - Desktop */}
           <div className="hidden rounded-full md:block relative bg-white/20 backdrop-blur-md group rounded-full">
-            <button className="px-3 py-2 font-medium">Connect</button>
+            <button className="px-4 lg:px-6 py-3 font-medium">Connect</button>
 
             <BorderBeam
               size={300}
               borderWidth={2}
-              className="from-transparent via-blue-300 to-transparent"
+              className="from-transparent via-blue-500 to-transparent"
             />
           </div>
 

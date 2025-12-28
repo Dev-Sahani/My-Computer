@@ -40,7 +40,7 @@ export default function ProductSection({ className = "" }) {
         }
         @keyframes row2-scroll {
           from {
-            transform: translateX(60%);
+            transform: translateX(60%);H
           }
           to {
             transform: translateX(-40%);
